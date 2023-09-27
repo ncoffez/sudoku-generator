@@ -1,75 +1,35 @@
-# Nuxt 3 Minimal Starter
+# Sudoku Generator
+## Purpose
+The Sudoku Generator is a Nuxt.js application designed to generate Sudoku puzzles. Whether you're a Sudoku enthusiast looking for new challenges or a developer in need of Sudoku puzzles for your project, this generator has got you covered.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Installation
+### Using Bun
+To install the project using Bun, follow these steps:
 
-## Setup
-
-Make sure to install the dependencies:
-
+Clone the repository:
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
+git clone https://github.com/ncoffez/sudoku-generator.git
+```
+Navigate to the project directory:
+```bash
+cd sudoku-generator
+```
+Run the Bun install command:
+```bash
 bun install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Running Tests
+The project uses Bun for running tests. To execute the tests, run the following command:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+bun test --watch
 ```
 
-## Production
+You can find the test file here.
 
-Build the application for production:
+## Configuration
+The project is configured using a `nuxt.config.ts` file. You can find it here.
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Additional Resources
+For more information on Nuxt.js, visit the official documentation.
+`;
