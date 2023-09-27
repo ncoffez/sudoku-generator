@@ -1,0 +1,58 @@
+:root {
+	--border-bold: solid 2px var(--color);
+	--border-muted: solid 1px var(--muted-color);
+}
+
+.board {
+	margin-block: 1em;
+	display: grid;
+	place-items: center;
+}
+
+.row {
+	display: flex;
+}
+
+.field {
+	display: grid;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	text-justify: center;
+	place-items: center;
+}
+
+.field > input {
+	all: unset;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	display: block;
+	place-items: center;
+	padding: 0 !important;
+	margin: 0 !important;
+
+}
+
+.field:nth-of-type(3n) {
+	border-right: var(--border-bold)
+}
+.field:nth-of-type(3n + 1), .field:nth-of-type(3n + 2) {
+	border-right: var(--border-muted);
+}
+
+.field:nth-of-type(1) {
+	border-left: var(--border-bold)
+}
+
+.row:nth-of-type(1) {
+	border-top: var(--border-bold)
+}
+
+.row:nth-of-type(3n) {
+	border-bottom: var(--border-bold)
+}
+
+.row:nth-of-type(3n + 1), .row:nth-of-type(3n + 2) {
+	border-bottom: var(--border-muted);
+}
