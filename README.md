@@ -25,11 +25,10 @@ The project uses Bun for running tests. To execute the tests, run the following 
 bun test --watch
 ```
 
-You can find the test file here.
+You can find the test file here. [Test File](https://github.com/ncoffez/sudoku-generator/blob/main/utils/sudoku.test.ts)
 
 ## Configuration
-The project is configured using a `nuxt.config.ts` file. You can find it here.
+The project is configured using a `nuxt.config.ts` file. You can find it here. [Configuration File](https://github.com/ncoffez/sudoku-generator/blob/main/nuxt.config.ts)
 
 ## Additional Resources
-For more information on Nuxt.js, visit the official documentation.
-`;
+For more information on Nuxt.js, visit the official documentation. [Nuxt.js Documentation](https://nuxt.com/docs/getting-started/introduction)
