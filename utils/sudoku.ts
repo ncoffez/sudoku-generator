@@ -4,13 +4,16 @@ export class Sudoku {
   problem: Grid;
   solution: Grid;
 
-  constructor(type?: "new" | "dummy", oldGrid?: Grid) {
+  constructor(type?: "new" | "dummy" | undefined, oldGrid?: Grid) {
     if (type === "dummy") {
       this.problem = new Grid(dummySudoku.problem as number[][]);
       this.solution = new Grid(dummySudoku.solution as number[][]);
-    } else {
+    } else if (type === "new") {
       this.solution = _newGrid();
       this.problem = _newProblem(this.solution);
+    } else {
+      this.solution = new Grid(Array(81).fill(null));
+      this.problem = new Grid(Array(81).fill(null));
     }
   }
 }

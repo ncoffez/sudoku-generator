@@ -17,7 +17,8 @@
 			</div>
 		</div>
 	</div>
-	<a id="show-solution" class="secondary outline"  href="#" role="button" @click="showSolution = !showSolution">Show Solution</a>
+	<a id="show-solution" class="secondary outline" href="#" role="button" @click="showSolution = !showSolution">Show
+		Solution</a>
 	<button id="new-grid" @click="newGrid()">Create new grid</button>
 </main>
 </template>
@@ -25,9 +26,10 @@
 import { Sudoku } from '~/utils/sudoku'
 
 const showSolution = ref(false)
-let sudoku: Ref<Sudoku> = ref(new Sudoku('dummy'))
+let sudoku: Ref<Sudoku> = ref(new Sudoku())
+onMounted(() => sudoku.value = new Sudoku('new'));
+
 const newGrid = () => (sudoku.value = new Sudoku('new'))
-let iterations = 0;
 
 </script>
 <style scoped>
