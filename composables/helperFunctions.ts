@@ -3,7 +3,6 @@ import { Grid } from "./sudoku";
 export function _randomNumber() {
   return Math.floor(Math.random() * 9 + 1);
 }
-
 export function convertTo9x9(arr: number[]): number[][] {
   if (arr.length !== 81) {
     throw new Error("Input array must have exactly 81 elements.");
@@ -21,7 +20,6 @@ export function convertTo9x9(arr: number[]): number[][] {
 
   return result;
 }
-
 export function isValidArray(arr: (number | null)[]): boolean {
   // Check for length of 9
   if (arr.length !== 9) {
@@ -47,8 +45,7 @@ export function isValidArray(arr: (number | null)[]): boolean {
 
   return true;
 }
-
-export function isValid(num: number, pos: number, grid: (number | null)[]): boolean {
+export function fieldIsValid(num: number, pos: number, grid: (number | null)[]): boolean {
   const [row, col] = [Math.floor(pos / 9), pos % 9];
   // Check row
   for (let i = 0; i < 9; i++) {
@@ -68,7 +65,6 @@ export function isValid(num: number, pos: number, grid: (number | null)[]): bool
   }
   return true;
 }
-
 export function randomizeArray(array: number[]) {
   let shuffledArray = array.slice();
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -77,7 +73,6 @@ export function randomizeArray(array: number[]) {
   }
   return shuffledArray;
 }
-
 export function countErrors(grid: Grid): number {
   let errors = 0;
   const sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -102,8 +97,7 @@ export function countErrors(grid: Grid): number {
   }
   return errors;
 }
-
-export function gridToConsole(array: number[]) {
+export function printGridToConsole(array: (number | number[] | null)[]) {
   if (array.length !== 81) {
     console.error("Array must have 81 elements.");
     return;
@@ -115,16 +109,14 @@ export function gridToConsole(array: number[]) {
     for (let j = 0; j < 9; j++) {
       row.push(array[i * 9 + j]);
     }
-    gridObject[`Row ${i + 1}`] = row;
+    gridObject[`Row ${i + 1}`] = row.map((v) => v?.toString());
   }
   console.table(gridObject);
   return null;
 }
-
 export function missingIndices(grid: (number | null)[]): number[] {
   return grid.map((v, i) => (v === null ? i : "notMissing")).filter((v) => v !== "notMissing") as number[];
 }
-
 export function findValidValues(index: number, grid: number[]): number[] {
   if (typeof index !== "number") throw new Error("Index is missing.");
   const grid9x9 = new Grid(convertTo9x9(grid));
@@ -145,7 +137,6 @@ export function findValidValues(index: number, grid: number[]): number[] {
 
   return validValues;
 }
-
 export function getPosition(index: number): { row: number; column: number; square: number } {
   if (index >= 81 || index < 0) throw new Error("Index is out of range.");
 

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-	"test": "bun test --watch",
+	  "test": "bun test --watch",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
